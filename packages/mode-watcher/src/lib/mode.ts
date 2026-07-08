@@ -48,13 +48,13 @@ export function setInitialMode({
 	themeStorageKey = "mode-watcher-theme",
 }: SetInitialModeArgs) {
 	const rootEl = document.documentElement;
-	let mode = defaultMode as string;
+	let mode: string = defaultMode;
 	try {
 		mode = localStorage.getItem(modeStorageKey) ?? defaultMode;
 	} catch {
 		// disabled or unavailable
 	}
-	let theme = defaultTheme as string;
+	let theme: string = defaultTheme;
 	try {
 		theme = localStorage.getItem(themeStorageKey) ?? defaultTheme;
 	} catch {
